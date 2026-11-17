@@ -61,8 +61,8 @@ jq -c --arg src "$src_root" '
   | (.message.model // "") as $model
   | select($model != "" and $model != "<synthetic>")
 
-  # An unrecognised model is still emitted: rates live in the Grafana panel, and
-  # an unpriced model showing up there is the point.
+  # An unrecognised model is still emitted: rates live in Dashhund, and an
+  # unpriced model showing up there is the point.
 
   | (.message.usage) as $u
   | (.cwd // "") as $cwd
